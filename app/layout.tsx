@@ -2,17 +2,10 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "SOCLE par STATURE — Votre site professionnel",
+  title: "SOCLE par STATURE — Votre site en pleine propriété",
   description:
-    "Un site professionnel conçu pour le mobile, disponible par abonnement ou en pleine propriété. Aperçu personnalisé sous 72 heures.",
-  icons: {
-    icon: [
-      { url: "/favicon.svg", type: "image/svg+xml" },
-      { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
-    ],
-    shortcut: "/favicon.ico",
-    apple: "/apple-touch-icon.png",
-  },
+    "Un site professionnel conçu pour le mobile, livré clé en main et entièrement à vous. Tarifs Sénégal, France et Royaume-Uni.",
+  icons: { icon: "/favicon.svg", shortcut: "/favicon.svg" },
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
