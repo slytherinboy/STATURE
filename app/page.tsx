@@ -322,8 +322,8 @@ export default function Home() {
     const subject = encodeURIComponent(`${selectedMarket === "UK" ? "SOCLE project" : "Projet SOCLE"} - ${data.get("company") || data.get("name")}`);
     const body = encodeURIComponent(
       selectedMarket === "UK"
-        ? `Hello STATURE,\n\nI would like a tailored preview for a fully owned SOCLE website.\n\nName: ${data.get("name")}\nBusiness: ${data.get("company")}\nMarket: United Kingdom\nPayment option: ${selectedPayment}\nMessage: ${data.get("message")}\n`
-        : `Bonjour STATURE,\n\nJe souhaite recevoir un aperçu pour un site SOCLE en pleine propriété.\n\nNom : ${data.get("name")}\nOrganisation : ${data.get("company")}\nMarché : ${market.label}\nModalité de paiement : ${selectedPayment}\nMessage : ${data.get("message")}\n`,
+        ? `Hello STATURE,\n\nI would like a tailored preview for a fully owned SOCLE website.\n\nName: ${data.get("name")}\nBusiness: ${data.get("company")}\nPhone: ${data.get("phone")}\nMarket: United Kingdom\nPayment option: ${selectedPayment}\nMessage: ${data.get("message")}\n`
+        : `Bonjour STATURE,\n\nJe souhaite recevoir un aperçu pour un site SOCLE en pleine propriété.\n\nNom : ${data.get("name")}\nOrganisation : ${data.get("company")}\nTéléphone : ${data.get("phone")}\nMarché : ${market.label}\nModalité de paiement : ${selectedPayment}\nMessage : ${data.get("message")}\n`,
     );
     setSubmitted(true);
     window.location.href = `mailto:staturesn@gmail.com?subject=${subject}&body=${body}`;
@@ -572,9 +572,10 @@ export default function Home() {
           <a href="mailto:staturesn@gmail.com">staturesn@gmail.com <span>↗</span></a>
         </div>
         <form className="contact-form" onSubmit={submitContact} data-reveal>
-          <div className="field-row">
-            <label>{copy.fields.name}<input name="name" type="text" placeholder={copy.fields.placeholderName} required /></label>
-            <label>{copy.fields.company}<input name="company" type="text" placeholder={copy.fields.placeholderCompany} required /></label>
+          <div className="field-row field-row--three">
+            <label>{copy.fields.name}<input name="name" type="text" autoComplete="name" placeholder={copy.fields.placeholderName} required /></label>
+            <label>{copy.fields.company}<input name="company" type="text" autoComplete="organization" placeholder={copy.fields.placeholderCompany} required /></label>
+            <label>{copy.fields.phone}<input name="phone" type="tel" inputMode="tel" autoComplete="tel" placeholder={copy.fields.placeholderPhone} required /></label>
           </div>
           <div className="field-row">
             <label>{copy.fields.market}
